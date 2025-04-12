@@ -7,7 +7,7 @@
 //
 // No hints this time!
 
-// I AM NOT DONE
+// I AM DONE
 
 fn string_slice(arg: &str) {
     println!("{}", arg);
@@ -17,14 +17,14 @@ fn string(arg: String) {
 }
 
 fn main() {
-    ???("blue");
-    ???("red".to_string());
-    ???(String::from("hi"));
-    ???("rust is fun!".to_owned());
-    ???("nice weather".into());
-    ???(format!("Interpolation {}", "Station"));
-    ???(&String::from("abc")[0..1]);
-    ???("  hello there ".trim());
-    ???("Happy Monday!".to_string().replace("Mon", "Tues"));
-    ???("mY sHiFt KeY iS sTiCkY".to_lowercase());
+    string_slice("blue");
+    string("red".to_string());
+    string(String::from("hi"));
+    string("rust is fun!".to_owned());// 这个不确定
+    string_slice("nice weather".into());// 这个不清楚原因
+    string(format!("Interpolation {}", "Station"));
+    string_slice(&String::from("abc")[0..1]);// &String会自动转化为&str
+    string_slice("  hello there ".trim());// trim方法返回&str
+    string("Happy Monday!".to_string().replace("Mon", "Tues"));
+    string("mY sHiFt KeY iS sTiCkY".to_lowercase());// 这个不清楚
 }
